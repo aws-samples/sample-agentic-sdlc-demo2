@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Require passing tests before submit",
+      "trigger": "PreToolUse",
+      "matcher": "submit_implementation$",
+      "action": { "type": "command", "command": "bash scripts/kiro-hooks/require-tests.sh" }
+    }
+  ]
+}

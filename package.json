@@ -1,0 +1,32 @@
+{
+  "name": "aidlc-platform",
+  "//nosemgrep": "package-dependencies-check — versions pinned via yarn.lock",
+  "version": "1.0.0",
+  "description": "AIDLC Platform — AI-powered Software Development Lifecycle platform on AWS",
+  "private": true,
+  "workspaces": [
+    "cdk"
+  ],
+  "scripts": {
+    "deploy-infrastructure": "ASSETS_BUCKET=$(bash scripts/package-assets.sh | tail -n 1) && yarn workspace cdk cdk deploy --require-approval never -c assetsBucketName=${ASSETS_BUCKET}",
+    "deploy-infrastructure-no-rollback": "ASSETS_BUCKET=$(bash scripts/package-assets.sh | tail -n 1) && yarn workspace cdk cdk deploy --require-approval never -c assetsBucketName=${ASSETS_BUCKET} --no-rollback",
+    "delete-infrastructure": "yarn workspace cdk cdk destroy",
+    "package-assets": "bash scripts/package-assets.sh",
+    "format:check": "prettier -c .",
+    "format:fix": "prettier -w ."
+  },
+  "license": "MIT-0",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-sh": "^0.14.0",
+    "aws-cdk": "^2.1111.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.243.0",
+    "dotenv": "17.2.3"
+  },
+  "resolutions": {
+    "underscore": ">=1.13.7",
+    "immutable": ">=5.0.2"
+  }
+}

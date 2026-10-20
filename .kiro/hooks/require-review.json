@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Require artifact review before advancing",
+      "trigger": "PreToolUse",
+      "matcher": "(complete_stage|handoff_project)$",
+      "action": { "type": "command", "command": "bash scripts/kiro-hooks/require-review.sh" }
+    }
+  ]
+}

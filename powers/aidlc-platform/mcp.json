@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "aidlc-platform": {
+      "command": "${AIDLC_MCP_PYTHON}",
+      "args": ["-m", "aidlc_mcp"],
+      "env": {
+        "PYTHONPATH": "${AIDLC_MCP_HOME}",
+        "AIDLC_AUTH_MODE": "${AIDLC_AUTH_MODE}",
+        "AIDLC_PERSONA_USERNAME": "${AIDLC_PERSONA_USERNAME}",
+        "AIDLC_PERSONA_PASSWORD": "${AIDLC_PERSONA_PASSWORD}",
+        "AIDLC_PERSONA_REFRESH_TOKEN": "${AIDLC_PERSONA_REFRESH_TOKEN}",
+        "AIDLC_PROJECT_API_URL": "${AIDLC_PROJECT_API_URL}",
+        "AIDLC_COGNITO_USER_POOL_ID": "${AIDLC_COGNITO_USER_POOL_ID}",
+        "AIDLC_COGNITO_CLIENT_ID": "${AIDLC_COGNITO_CLIENT_ID}",
+        "AIDLC_AWS_REGION": "${AIDLC_AWS_REGION}",
+        "AIDLC_FILES_BUCKET": "${AIDLC_FILES_BUCKET}",
+        "AIDLC_STATE_DIR": "${AIDLC_STATE_DIR}"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "atlassian",
+    "name": "Atlassian",
+    "description": "Connect Jira and Confluence to your project for issue tracking and documentation.",
+    "allowed": true,
+    "credentialFields": [
+      { "key": "email", "label": "Email", "type": "text" },
+      { "key": "api_token", "label": "API Token", "type": "password" },
+      { "key": "cloud_id", "label": "Cloud ID (from admin.atlassian.com → your org URL)", "type": "text" }
+    ],
+    "stages": [
+      "post_requirements_analysis",
+      "post_user_stories",
+      "post_workflow_planning",
+      "post_application_design",
+      "post_units_generation",
+      "post_functional_design",
+      "post_code_generation",
+      "post_build_and_test"
+    ]
+  },
+  {
+    "id": "launchdarkly",
+    "name": "LaunchDarkly",
+    "description": "Manage feature flags for progressive delivery and controlled rollouts.",
+    "allowed": false,
+    "credentialFields": [
+      { "key": "api_key", "label": "API Key", "type": "password" },
+      { "key": "project_key", "label": "Project Key", "type": "text" },
+      { "key": "environment_key", "label": "Environment Key", "type": "text" }
+    ],
+    "stages": [
+      "post_application_design",
+      "post_code_generation"
+    ]
+  },
+  {
+    "id": "dynatrace",
+    "name": "Dynatrace",
+    "description": "Instrument your application with observability, SLOs, and dashboards.",
+    "allowed": false,
+    "credentialFields": [
+      { "key": "api_token", "label": "API Token", "type": "password" },
+      { "key": "environment_url", "label": "Environment URL (e.g. https://{id}.live.dynatrace.com)", "type": "text" }
+    ],
+    "stages": [
+      "post_application_design",
+      "post_infrastructure_design",
+      "post_code_generation",
+      "post_build_and_test"
+    ]
+  },
+  {
+    "id": "controlmonkey",
+    "name": "ControlMonkey",
+    "description": "Validate and govern infrastructure-as-code for security and compliance.",
+    "allowed": false,
+    "credentialFields": [
+      { "key": "api_token", "label": "API Token", "type": "password" }
+    ],
+    "stages": [
+      "post_infrastructure_design",
+      "post_code_generation",
+      "post_build_and_test"
+    ]
+  }
+]

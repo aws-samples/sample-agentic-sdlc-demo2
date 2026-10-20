@@ -1,0 +1,85 @@
+assets/*.json
+assets/*
+tmp/**
+.DS_Store
+terraform/ecs-rolling-deployment/.terraform*
+terraform/ecs-rolling-deployment/terraform.tfstate
+terraform/ecs-rolling-deployment/terraform.tfstate.backup
+terraform/ci-cd-infrastructure/.terraform*
+terraform/ci-cd-infrastructure/terraform.tfstate
+terraform/ci-cd-infrastructure/terraform.tfstate.backup
+package-lock.json
+
+###
+# CDK
+#
+**/*cdk.context.json
+package.json.lock
+yarn-error.log
+node_modules/
+dist/
+
+###
+# Lambda Layers (generated during build)
+#
+code/lambda-layers/toolkit-layer/python/
+
+###
+# Misc
+#
+**/*.zip
+!**/**/toolkit-layer.zip
+# But ignore the one in the source code directory (generated during build)
+code/lambda-layers/toolkit-layer/toolkit-layer.zip
+!assets/.gitkeep
+**/*.localtest
+**/*.bkp
+/testing
+/Output/*
+
+# Standard files
+**/.vscode
+**/.DS_Store
+**/.ropeproject
+
+##ignore image
+docker-images/*.tar
+
+# AI tooling and generated docs
+.claude/
+# .kiro holds the Kiro-frontend deliverable (persona agents, skills, hooks,
+# steering, specs) — keep it tracked. Ignore only local runtime state + caches.
+.kiro/.aidlc-state/
+.kiro/**/__pycache__/
+!assetsSrc/.kiro
+.venv/
+**/__pycache__/
+**/*.egg-info/
+.hypothesis/
+.pytest_cache/
+# Local environment files (may contain account-specific IDs/ARNs).
+# Keep .env.example tracked as the shareable template.
+.env
+**/.env
+!**/.env.example
+# Deployment and setup scripts (not part of workshop content)
+/deploy.sh
+/DEPLOYMENT_GUIDE.md
+/READY_TO_DEPLOY.md
+/scripts/setup-*.sh
+/scripts/setup-*.py
+/scripts/verify-*.sh
+# ...but keep the Kiro-frontend workspace provisioner (essential tooling).
+!/scripts/setup-test-workspace.sh
+/scripts/AUTOMATED_SETUP.md
+/scripts/IMPLEMENTATION_SUMMARY.md
+/scripts/INTEGRATION_GUIDE.md
+/scripts/README.md.pytest_cache/
+SECURITY-FINDINGS.md
+
+# Security scan reports
+ProbeScanExport-*.csv
+
+# CDK synth output
+cdk/cdk.out/
+cdk/assets/

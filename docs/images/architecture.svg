@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#566573"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="1200" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="26" font-weight="bold" fill="#1c2833">Agentic SDLC Transformation — Architecture</text>
+
+  <!-- ================= Kiro IDE group ================= -->
+  <rect x="60" y="70" width="1080" height="210" rx="12" fill="#eef0fb" stroke="#5b6bbf" stroke-width="2"/>
+  <text x="600" y="98" text-anchor="middle" font-size="17" font-weight="bold" fill="#3b4aa0">Kiro IDE (per persona) — the only frontend</text>
+
+  <!-- Persona agent -->
+  <rect x="90" y="120" width="240" height="130" rx="8" fill="#ffffff" stroke="#5b6bbf" stroke-width="1.5"/>
+  <text x="210" y="170" text-anchor="middle" font-size="16" font-weight="bold" fill="#1c2833">Persona agent</text>
+  <text x="210" y="195" text-anchor="middle" font-size="13" fill="#566573">.kiro/agents/</text>
+  <text x="210" y="215" text-anchor="middle" font-size="12" fill="#566573">one agent per persona</text>
+
+  <!-- Stage Skills -->
+  <rect x="355" y="120" width="240" height="130" rx="8" fill="#ffffff" stroke="#5b6bbf" stroke-width="1.5"/>
+  <text x="475" y="170" text-anchor="middle" font-size="16" font-weight="bold" fill="#1c2833">Stage Skills</text>
+  <text x="475" y="195" text-anchor="middle" font-size="13" fill="#566573">.kiro/skills/</text>
+  <text x="475" y="215" text-anchor="middle" font-size="12" fill="#566573">per-stage playbooks</text>
+
+  <!-- Enforcement hooks -->
+  <rect x="620" y="120" width="240" height="130" rx="8" fill="#ffffff" stroke="#5b6bbf" stroke-width="1.5"/>
+  <text x="740" y="170" text-anchor="middle" font-size="16" font-weight="bold" fill="#1c2833">Enforcement hooks</text>
+  <text x="740" y="195" text-anchor="middle" font-size="13" fill="#566573">.kiro/hooks/</text>
+  <text x="740" y="215" text-anchor="middle" font-size="12" fill="#566573">review / tests gates</text>
+
+  <!-- MCP server -->
+  <rect x="885" y="120" width="240" height="130" rx="8" fill="#dfe3f7" stroke="#3b4aa0" stroke-width="1.5"/>
+  <text x="1005" y="170" text-anchor="middle" font-size="16" font-weight="bold" fill="#1c2833">aidlc-platform MCP</text>
+  <text x="1005" y="195" text-anchor="middle" font-size="13" fill="#566573">code/kiro-mcp (stdio)</text>
+  <text x="1005" y="215" text-anchor="middle" font-size="12" fill="#566573">control + generation flow</text>
+
+  <!-- ================= AWS group ================= -->
+  <rect x="40" y="330" width="1120" height="640" rx="12" fill="#f7f9fb" stroke="#e8a33d" stroke-width="2.5"/>
+  <text x="600" y="360" text-anchor="middle" font-size="17" font-weight="bold" fill="#b9770e">AWS account — stack AIDLCPlatformWorkshop</text>
+
+  <!-- Row A -->
+  <!-- Cognito -->
+  <rect x="70" y="400" width="300" height="90" rx="8" fill="#fadbd8" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="220" y="428" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">Amazon Cognito</text>
+  <text x="220" y="450" text-anchor="middle" font-size="12" fill="#566573">user pool + agentcore-kiro-client</text>
+  <text x="220" y="470" text-anchor="middle" font-size="12" fill="#566573">6 persona groups</text>
+
+  <!-- API Gateway (Project API) -->
+  <rect x="430" y="400" width="300" height="90" rx="8" fill="#d6eaf8" stroke="#2471a3" stroke-width="1.5"/>
+  <text x="580" y="428" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">API Gateway (REST)</text>
+  <text x="580" y="450" text-anchor="middle" font-size="12" fill="#566573">agentcore-strands-project-api</text>
+  <text x="580" y="470" text-anchor="middle" font-size="12" fill="#566573">Cognito authorizer</text>
+
+  <!-- Webhook API -->
+  <rect x="790" y="400" width="300" height="90" rx="8" fill="#d1f2eb" stroke="#148f77" stroke-width="1.5"/>
+  <text x="940" y="428" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">API Gateway — Git webhook</text>
+  <text x="940" y="450" text-anchor="middle" font-size="12" fill="#566573">agentcore-strands-git-webhook</text>
+  <text x="940" y="470" text-anchor="middle" font-size="12" fill="#566573">auth NONE (signature-verified)</text>
+
+  <!-- Row B -->
+  <!-- Project API Lambda -->
+  <rect x="430" y="540" width="300" height="90" rx="8" fill="#fdebd0" stroke="#ca6f1e" stroke-width="1.5"/>
+  <text x="580" y="575" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">Project API Lambda</text>
+  <text x="580" y="597" text-anchor="middle" font-size="12" fill="#566573">agentcore-strands-project-api</text>
+  <text x="580" y="616" text-anchor="middle" font-size="12" fill="#566573">state · RBAC · acceptance</text>
+
+  <!-- Webhook Lambda -->
+  <rect x="790" y="540" width="300" height="90" rx="8" fill="#fdebd0" stroke="#ca6f1e" stroke-width="1.5"/>
+  <text x="940" y="580" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">Git webhook Lambda</text>
+  <text x="940" y="602" text-anchor="middle" font-size="12" fill="#566573">verify signature</text>
+
+  <!-- Row C -->
+  <!-- DynamoDB -->
+  <rect x="70" y="680" width="300" height="90" rx="8" fill="#d5f5e3" stroke="#1e8449" stroke-width="1.5"/>
+  <text x="220" y="708" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">Amazon DynamoDB</text>
+  <text x="220" y="730" text-anchor="middle" font-size="12" fill="#566573">AidlcProjects (system of record)</text>
+  <text x="220" y="750" text-anchor="middle" font-size="12" fill="#566573">GSI1 / GSI2 / GSI3</text>
+
+  <!-- S3 -->
+  <rect x="430" y="680" width="300" height="90" rx="8" fill="#e8daef" stroke="#7d3c98" stroke-width="1.5"/>
+  <text x="580" y="712" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">Amazon S3</text>
+  <text x="580" y="734" text-anchor="middle" font-size="12" fill="#566573">agentcore-files-&lt;acct&gt;-&lt;region&gt;</text>
+
+  <!-- Secrets Manager -->
+  <rect x="790" y="680" width="300" height="90" rx="8" fill="#f6ddcc" stroke="#a04000" stroke-width="1.5"/>
+  <text x="940" y="712" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">Secrets Manager</text>
+  <text x="940" y="734" text-anchor="middle" font-size="12" fill="#566573">aidlc/projects/{uuid}/git</text>
+
+  <!-- Row D -->
+  <!-- CodeBuild ingest -->
+  <rect x="250" y="820" width="300" height="90" rx="8" fill="#fcf3cf" stroke="#b7950b" stroke-width="1.5"/>
+  <text x="400" y="852" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">CodeBuild repo-ingest</text>
+  <text x="400" y="874" text-anchor="middle" font-size="12" fill="#566573">agentcore-strands-repo-ingest</text>
+
+  <!-- CodeBuild test -->
+  <rect x="650" y="820" width="300" height="90" rx="8" fill="#fcf3cf" stroke="#b7950b" stroke-width="1.5"/>
+  <text x="800" y="852" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">CodeBuild repo-test</text>
+  <text x="800" y="874" text-anchor="middle" font-size="12" fill="#566573">agentcore-strands-repo-test</text>
+
+  <!-- ================= External ================= -->
+  <rect x="470" y="1000" width="260" height="70" rx="8" fill="#d6dbdf" stroke="#566573" stroke-width="1.5"/>
+  <text x="600" y="1032" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2833">GitHub / GitLab</text>
+  <text x="600" y="1053" text-anchor="middle" font-size="12" fill="#566573">developer's pushed repo</text>
+
+  <!-- ================= Arrows ================= -->
+  <g stroke="#566573" stroke-width="1.6" fill="none">
+    <!-- MCP -> Cognito -->
+    <line x1="960" y1="250" x2="290" y2="400" marker-end="url(#arrow)"/>
+    <!-- MCP -> API Gateway -->
+    <line x1="985" y1="250" x2="620" y2="400" marker-end="url(#arrow)"/>
+    <!-- MCP -> S3 -->
+    <line x1="1015" y1="250" x2="700" y2="680" marker-end="url(#arrow)"/>
+    <!-- API Gateway -> Lambda -->
+    <line x1="580" y1="490" x2="580" y2="540" marker-end="url(#arrow)"/>
+    <!-- Lambda -> DynamoDB -->
+    <line x1="450" y1="630" x2="260" y2="680" marker-end="url(#arrow)"/>
+    <!-- Lambda -> S3 -->
+    <line x1="560" y1="630" x2="560" y2="680" marker-end="url(#arrow)"/>
+    <!-- Lambda -> Secrets -->
+    <line x1="710" y1="630" x2="850" y2="680" marker-end="url(#arrow)"/>
+    <!-- Lambda -> CodeBuild ingest -->
+    <line x1="500" y1="630" x2="430" y2="820" marker-end="url(#arrow)"/>
+    <!-- Lambda -> CodeBuild test -->
+    <line x1="670" y1="630" x2="760" y2="820" marker-end="url(#arrow)"/>
+    <!-- CodeBuild ingest -> GitHub (clone) -->
+    <line x1="440" y1="910" x2="520" y2="1000" marker-end="url(#arrow)"/>
+    <!-- CodeBuild ingest -> S3 (s3 sync) -->
+    <line x1="520" y1="820" x2="560" y2="770" marker-end="url(#arrow)"/>
+    <!-- CodeBuild ingest -> Lambda (ingest-callback) -->
+    <line x1="470" y1="820" x2="530" y2="630" marker-end="url(#arrow)"/>
+    <!-- CodeBuild test -> Lambda (test-callback) -->
+    <line x1="740" y1="820" x2="660" y2="630" marker-end="url(#arrow)"/>
+    <!-- GitHub -> Webhook API (push) -->
+    <line x1="720" y1="1005" x2="930" y2="490" marker-end="url(#arrow)"/>
+    <!-- Webhook API -> Webhook Lambda -->
+    <line x1="940" y1="490" x2="940" y2="540" marker-end="url(#arrow)"/>
+    <!-- Webhook Lambda -> CodeBuild ingest (verify + StartBuild) -->
+    <line x1="820" y1="630" x2="560" y2="855" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Arrow labels (white backgrounds keep text legible over crossing lines) -->
+  <g font-size="12.5" fill="#1a5276" font-weight="bold" text-anchor="middle">
+    <g><rect x="558" y="299" width="104" height="18" fill="#ffffff" opacity="0.9"/><text x="610" y="312">access token</text></g>
+    <g><rect x="782" y="317" width="106" height="18" fill="#ffffff" opacity="0.9"/><text x="835" y="330">REST (Bearer)</text></g>
+    <g><rect x="862" y="375" width="140" height="18" fill="#ffffff" opacity="0.9"/><text x="932" y="388">presigned PUT / GET</text></g>
+    <g><rect x="606" y="507" width="52" height="18" fill="#ffffff" opacity="0.9"/><text x="632" y="520">invoke</text></g>
+    <g><rect x="290" y="635" width="90" height="18" fill="#ffffff" opacity="0.9"/><text x="335" y="648">read / write</text></g>
+    <g><rect x="524" y="655" width="152" height="18" fill="#ffffff" opacity="0.9"/><text x="600" y="668">presign / Head / Get</text></g>
+    <g><rect x="742" y="635" width="116" height="18" fill="#ffffff" opacity="0.9"/><text x="800" y="648">PutSecretValue</text></g>
+    <g><rect x="378" y="722" width="80" height="18" fill="#ffffff" opacity="0.9"/><text x="418" y="735">StartBuild</text></g>
+    <g><rect x="702" y="722" width="80" height="18" fill="#ffffff" opacity="0.9"/><text x="742" y="735">StartBuild</text></g>
+    <g><rect x="404" y="955" width="52" height="18" fill="#ffffff" opacity="0.9"/><text x="430" y="968">clone</text></g>
+    <g><rect x="480" y="917" width="164" height="18" fill="#ffffff" opacity="0.9"/><text x="562" y="930">s3 sync {slug}/source/</text></g>
+    <g><rect x="326" y="699" width="112" height="18" fill="#ffffff" opacity="0.9"/><text x="382" y="712">ingest-callback</text></g>
+    <g><rect x="708" y="699" width="100" height="18" fill="#ffffff" opacity="0.9"/><text x="758" y="712">test-callback</text></g>
+    <g><rect x="826" y="1002" width="46" height="18" fill="#ffffff" opacity="0.9"/><text x="849" y="1015">push</text></g>
+    <g><rect x="628" y="799" width="132" height="18" fill="#ffffff" opacity="0.9"/><text x="694" y="812">verify + StartBuild</text></g>
+  </g>
+
+  <!-- Legend / footnote -->
+  <text x="600" y="1120" text-anchor="middle" font-size="14" font-weight="bold" fill="#7d3c98">No AgentCore (Runtime / Gateway / Memory) · No web UI · Kiro generates every deliverable · Backend runs no model</text>
+  <text x="600" y="1150" text-anchor="middle" font-size="12" fill="#566573">Only network-exposed endpoints: Cognito-authorized Project API and the signature-verified Git push webhook. Ingest/test callbacks are direct Lambda invokes.</text>
+</svg>

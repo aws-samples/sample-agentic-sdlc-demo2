@@ -1,0 +1,277 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "3. Project API record layer → DynamoDB": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470522
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346477580
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787347502728
+      }
+    ],
+    "4. Stage cursor + stage-brief endpoint": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470557
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787347505888
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787347811734
+      }
+    ],
+    "5. Acceptance validators (lenient v1)": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470586
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787347814966
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787348069437
+      }
+    ],
+    "6. Artifact submission endpoint (presigned PUT)": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470635
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787348073080
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787348417510
+      }
+    ],
+    "7. complete-stage endpoint (validate → advance)": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470662
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787348421472
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787349280150
+      }
+    ],
+    "8. MCP server: new tools + AgentCore-client removal": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470687
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787349283531
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787349929627
+      }
+    ],
+    "9. Stage Skills (generation playbooks)": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470713
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787349933402
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787350343060
+      }
+    ],
+    "10. Persona agents: drive the brief→generate→submit→complete flow": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470737
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787350347670
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787351144716
+      }
+    ],
+    "11. Remove AgentCore (CDK + code)": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470763
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787351148184
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787353566273
+      }
+    ],
+    "12. Auth cleanup": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470787
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787353569760
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787353848459
+      }
+    ],
+    "13. Git round-trip on DynamoDB (retained, no AgentCore)": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470808
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787353851842
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787354357481
+      }
+    ],
+    "14. Observability & audit": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470836
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787354360959
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787354719632
+      }
+    ],
+    "15. End-to-end pilot: BA `requirements_analysis`": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470861
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787354723182
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787355174527
+      }
+    ],
+    "16. Roll forward remaining stages": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470886
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787355178092
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787357620295
+      }
+    ],
+    "17. Docs & steering update": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470923
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787357623907
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787445113869
+      }
+    ],
+    "18. Full verification": [
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787346470947
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787445117414
+      },
+      {
+        "executionId": "92f6039a-0f46-4c3b-812d-67bfcfa03dc0",
+        "chatSessionId": "sess_d2619225-ddcf-4c5d-8a56-44fa290cfa41",
+        "timestamp": 1787447094008
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+# States where the owning persona approves upstream work and must review
+# artifacts before a forward transition. One state per line; '#' comments ok.
+assigned_to_sa
+in_qa
+in_deployment

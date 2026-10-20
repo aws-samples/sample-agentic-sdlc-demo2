@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Audit state-changing platform tool calls",
+      "trigger": "PostToolUse",
+      "matcher": "(complete_stage|submit_artifact|handoff_project|return_for_changes|create_project|delete_project|link_repo|submit_implementation|run_tests|upload_requirements)$",
+      "action": { "type": "command", "command": "bash scripts/kiro-hooks/audit.sh" }
+    }
+  ]
+}

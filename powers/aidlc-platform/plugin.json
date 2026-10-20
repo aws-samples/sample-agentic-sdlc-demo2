@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "aidlc-platform",
+  "version": "0.1.0",
+  "description": "Kiro frontend for the Agentic SDLC Transformation platform: drive projects, review artifacts, and perform persona-to-persona handoffs from Kiro via the platform MCP server. Additive and server-preserving (the Project API remains the authority).",
+  "author": { "name": "Agentic SDLC Transformation" },
+  "license": "MIT",
+  "keywords": ["sdlc", "requirements", "handoff", "review", "qa", "deploy", "agentic", "aidlc"]
+}

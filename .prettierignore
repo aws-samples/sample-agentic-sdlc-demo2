@@ -1,0 +1,18 @@
+**/cdk.out
+cdk/bin/*.d.ts
+cdk/bin/*.js
+cdk/lib/*.d.ts
+cdk/lib/*.js
+cdk/test/*.js
+static/workshop-stack.json
+dist
+code
+*.ja-JP.md
+*.ko-KR.md
+assetsSrc/*
+
+# Generated build-time mirror of the canonical Persona/Workflow Registry
+# (code/agentcore-runtime/icode-agent/workflow_registry.json). It must remain
+# byte-identical to the canonical source (design Section 3a-ii), so it is
+# exempt from formatter reformatting.
+cdk/custom-resources/workflow_registry.json

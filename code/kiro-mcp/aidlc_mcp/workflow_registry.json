@@ -1,0 +1,299 @@
+{
+  "initial_state": "draft",
+  "personas": {
+    "requirements-analyst": { "display": "Business Analyst", "order": 1 },
+    "system-architect": { "display": "Solution Architect", "order": 2 },
+    "software-developer": { "display": "Software Developer", "order": 3 },
+    "qa-engineer": { "display": "QA Engineer", "order": 4 },
+    "devops-engineer": { "display": "DevOps Engineer", "order": 5 }
+  },
+  "segments": {
+    "ba_segment": {
+      "owning_role": "requirements-analyst",
+      "stages": [
+        "workspace_detection",
+        "reverse_engineering",
+        "requirements_analysis",
+        "user_stories"
+      ],
+      "entry_node": "workspace_detection_ext",
+      "exit_hub": "hub_post_user_stories"
+    },
+    "sa_segment": {
+      "owning_role": "system-architect",
+      "stages": [
+        "workflow_planning",
+        "nfr_requirements",
+        "nfr_design",
+        "application_design",
+        "units_generation",
+        "inception_complete"
+      ],
+      "entry_node": "workflow_planning",
+      "exit_hub": "hub_post_inception_complete"
+    },
+    "dev_segment": {
+      "owning_role": "software-developer",
+      "stages": [
+        "construction_handoff"
+      ],
+      "entry_node": "construction_handoff",
+      "exit_hub": "hub_post_construction_handoff"
+    },
+    "qa_segment": {
+      "owning_role": "qa-engineer",
+      "stages": [
+        "test_planning",
+        "test_execution",
+        "qa_report"
+      ],
+      "entry_node": "test_planning",
+      "exit_hub": "hub_post_qa_report"
+    },
+    "devops_segment": {
+      "owning_role": "devops-engineer",
+      "stages": [
+        "deployment_planning",
+        "release"
+      ],
+      "entry_node": "deployment_planning",
+      "exit_hub": "hub_post_release"
+    }
+  },
+  "states": {
+    "draft": { "owning_role": "requirements-analyst", "segment": "ba_segment", "forward": "requirements_ready" },
+    "requirements_ready": { "owning_role": "requirements-analyst", "segment": "ba_segment", "forward": "assigned_to_sa" },
+    "assigned_to_sa": { "owning_role": "system-architect", "segment": "sa_segment", "forward": "in_design" },
+    "in_design": { "owning_role": "system-architect", "segment": "sa_segment", "forward": "design_ready" },
+    "design_ready": { "owning_role": "system-architect", "segment": "sa_segment", "forward": "ready_for_dev" },
+    "ready_for_dev": { "owning_role": "system-architect", "segment": "sa_segment", "forward": "assigned_to_dev" },
+    "assigned_to_dev": { "owning_role": "software-developer", "segment": "dev_segment", "forward": "implementation_submitted" },
+    "implementation_submitted": { "owning_role": "software-developer", "segment": "dev_segment", "forward": "assigned_to_qa" },
+    "assigned_to_qa": { "owning_role": "qa-engineer", "segment": "qa_segment", "forward": "in_qa" },
+    "in_qa": { "owning_role": "qa-engineer", "segment": "qa_segment", "forward": "qa_passed" },
+    "qa_passed": { "owning_role": "qa-engineer", "segment": "qa_segment", "forward": "assigned_to_devops" },
+    "assigned_to_devops": { "owning_role": "devops-engineer", "segment": "devops_segment", "forward": "in_deployment" },
+    "in_deployment": { "owning_role": "devops-engineer", "segment": "devops_segment", "forward": "deployed" },
+    "deployed": { "owning_role": "devops-engineer", "segment": "devops_segment", "forward": null }
+  },
+  "request_changes": {
+    "assigned_to_sa": { "target": "requirements_ready", "label": "Changes requested" },
+    "assigned_to_dev": { "target": "design_ready", "label": "Design changes requested" },
+    "in_qa": { "target": "assigned_to_dev", "label": "QA changes requested" },
+    "in_deployment": { "target": "assigned_to_qa", "label": "Deployment changes requested" }
+  },
+  "stage_contracts": {
+    "requirements_analysis": {
+      "generator": "kiro",
+      "skill": "requirements-analysis",
+      "consumes": [
+        "aidlc-docs/inception/requirements/uploaded"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/requirements/requirements.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:200", "has_sections:Functional Requirements,Non-Functional Requirements,Assumptions"]
+        }
+      ]
+    },
+    "user_stories": {
+      "generator": "kiro",
+      "skill": "user-stories",
+      "advances_state": "requirements_ready",
+      "consumes": [
+        "aidlc-docs/inception/requirements/requirements.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/user-stories/stories.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:150", "has_sections:User Stories"]
+        }
+      ]
+    },
+    "workflow_planning": {
+      "generator": "kiro",
+      "skill": "workflow-planning",
+      "advances_state": "in_design",
+      "consumes": [
+        "aidlc-docs/inception/requirements/requirements.md",
+        "aidlc-docs/inception/user-stories/stories.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/plans/execution-plan.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:100", "has_sections:Overview,Stages to Execute"]
+        }
+      ]
+    },
+    "nfr_requirements": {
+      "generator": "kiro",
+      "skill": "nfr-requirements",
+      "consumes": [
+        "aidlc-docs/inception/requirements/requirements.md",
+        "aidlc-docs/inception/user-stories/stories.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/nfr-requirements/nfr-requirements.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:150", "has_sections:Performance,Security,Scalability"]
+        }
+      ]
+    },
+    "nfr_design": {
+      "generator": "kiro",
+      "skill": "nfr-design",
+      "consumes": [
+        "aidlc-docs/inception/nfr-requirements/nfr-requirements.md",
+        "aidlc-docs/inception/requirements/requirements.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/nfr-design/nfr-design.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:150", "has_sections:AWS Design Patterns,Logical Components"]
+        }
+      ]
+    },
+    "application_design": {
+      "generator": "kiro",
+      "skill": "application-design",
+      "consumes": [
+        "aidlc-docs/inception/requirements/requirements.md",
+        "aidlc-docs/inception/user-stories/stories.md",
+        "aidlc-docs/inception/nfr-design/nfr-design.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/application-design/application-design.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:200", "has_sections:Components,Services,Dependencies"]
+        }
+      ]
+    },
+    "units_generation": {
+      "generator": "kiro",
+      "skill": "units-generation",
+      "advances_state": "design_ready",
+      "consumes": [
+        "aidlc-docs/inception/application-design/application-design.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/inception/application-design/unit-of-work.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:120", "has_sections:Units of Work"]
+        }
+      ]
+    },
+    "inception_complete": {
+      "generator": "kiro",
+      "skill": "inception-complete",
+      "advances_state": "ready_for_dev",
+      "consumes": [
+        "aidlc-docs/inception/application-design/application-design.md",
+        "aidlc-docs/inception/application-design/unit-of-work.md"
+      ],
+      "produces": []
+    },
+    "construction_handoff": {
+      "generator": "kiro",
+      "skill": "construction-handoff",
+      "consumes": [
+        "aidlc-docs/inception/requirements/requirements.md",
+        "aidlc-docs/inception/user-stories/stories.md",
+        "aidlc-docs/inception/application-design/application-design.md",
+        "aidlc-docs/inception/application-design/unit-of-work.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/construction/construction-brief.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:150", "has_sections:Application Design,Units of Work"]
+        }
+      ]
+    },
+    "test_planning": {
+      "generator": "kiro",
+      "skill": "test-planning",
+      "advances_state": "in_qa",
+      "consumes": [
+        "aidlc-docs/inception/requirements/requirements.md",
+        "aidlc-docs/inception/user-stories/stories.md",
+        "aidlc-docs/inception/application-design/application-design.md",
+        "aidlc-docs/inception/application-design/unit-of-work.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/qa/test-plan.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:120", "has_sections:Test Strategy,Test Cases"]
+        }
+      ]
+    },
+    "test_execution": {
+      "generator": "kiro",
+      "skill": "test-execution",
+      "consumes": [
+        "aidlc-docs/qa/test-plan.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/qa/test-results.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:80", "has_sections:Execution Summary"]
+        }
+      ]
+    },
+    "qa_report": {
+      "generator": "kiro",
+      "skill": "qa-report",
+      "advances_state": "qa_passed",
+      "consumes": [
+        "aidlc-docs/qa/test-plan.md",
+        "aidlc-docs/qa/test-results.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/qa/qa-report.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:80", "has_sections:Summary,Decision"]
+        }
+      ]
+    },
+    "deployment_planning": {
+      "generator": "kiro",
+      "skill": "deployment-planning",
+      "advances_state": "in_deployment",
+      "consumes": [
+        "aidlc-docs/inception/application-design/application-design.md",
+        "aidlc-docs/qa/qa-report.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/devops/deployment-plan.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:120", "has_sections:Target Environments,Rollback"]
+        }
+      ]
+    },
+    "release": {
+      "generator": "kiro",
+      "skill": "release",
+      "advances_state": "deployed",
+      "consumes": [
+        "aidlc-docs/devops/deployment-plan.md"
+      ],
+      "produces": [
+        {
+          "path": "aidlc-docs/devops/release-runbook.md",
+          "required": true,
+          "acceptance": ["nonempty", "min_words:100", "has_sections:Deploy Steps,Rollback"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Gitleaks false positives — these are not real secrets
+
+# .env contains REPLACE_ME placeholders (Cognito client IDs are public PKCE values when real)
+d15f513fcdfa7228fe75f19520a1287098f4da94:code/ui-frontend/.env:generic-api-key:2
+
+# Documentation example with placeholder API token
